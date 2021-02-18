@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cities.Migrations
 {
     [DbContext(typeof(CityInfoContext))]
-    [Migration("20210218215718_CitiesDBInitMigration")]
-    partial class CitiesDBInitMigration
+    [Migration("20210218221432_CitiesInitMigration")]
+    partial class CitiesInitMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,6 +36,12 @@ namespace Cities.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cities");
+
+                    b.HasData(
+                        new { Id = 1, Description = "The one with that big park.", Name = "New York City" },
+                        new { Id = 2, Description = "The one with the cathedral that was never really finished.", Name = "Antwerp" },
+                        new { Id = 3, Description = "The one with that big tower.", Name = "Paris" }
+                    );
                 });
 
             modelBuilder.Entity("Cities.Entities.PointOfInterest", b =>

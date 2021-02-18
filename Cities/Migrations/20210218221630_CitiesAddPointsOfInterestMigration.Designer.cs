@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cities.Migrations
 {
     [DbContext(typeof(CityInfoContext))]
-    [Migration("20210218220443_SampleDataSeed")]
-    partial class SampleDataSeed
+    [Migration("20210218221630_CitiesAddPointsOfInterestMigration")]
+    partial class CitiesAddPointsOfInterestMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
