@@ -15,3 +15,4 @@ C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.pdb
 C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.genruntimeconfig.cache
 C:\Users\ARTAS\source\repos\Cities\Cities\bin\Debug\netcoreapp2.1\nlog.config
 C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.csproj.CoreCompileInputs.cache
+C:\Users\ARTAS\source\repos\Cities\Cities\bin\Debug\netcoreapp2.1\appsettings.json

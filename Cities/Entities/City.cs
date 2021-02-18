@@ -13,9 +13,9 @@ namespace Cities.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
-        [MaxLength(50)]
+        [MaxLength(20)]
         public string Name { get; set; }
-        [MaxLength(200)]
+        [MaxLength(150)]
         public string Description { get; set; }
 
         public ICollection<PointOfInterest> PointsOfInterest { get; set; }
