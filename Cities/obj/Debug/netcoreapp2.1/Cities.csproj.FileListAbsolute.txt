@@ -7,10 +7,11 @@ C:\Users\ARTAS\source\repos\Cities\Cities\bin\Debug\netcoreapp2.1\Cities.pdb
 C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.csprojAssemblyReference.cache
 C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.AssemblyInfoInputs.cache
 C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.AssemblyInfo.cs
-C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.csproj.CoreCompileInputs.cache
 C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.RazorAssemblyInfo.cache
 C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.RazorAssemblyInfo.cs
 C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.RazorTargetAssemblyInfo.cache
 C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.dll
 C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.pdb
 C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.genruntimeconfig.cache
+C:\Users\ARTAS\source\repos\Cities\Cities\bin\Debug\netcoreapp2.1\nlog.config
+C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.csproj.CoreCompileInputs.cache
