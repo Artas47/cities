@@ -29,7 +29,7 @@ namespace Cities.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(20);
+                        .HasMaxLength(30);
 
                     b.HasKey("Id");
 
@@ -55,7 +55,7 @@ namespace Cities.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(20);
+                        .HasMaxLength(30);
 
                     b.HasKey("Id");
 

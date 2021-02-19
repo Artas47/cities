@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cities.Migrations
 {
     [DbContext(typeof(CityInfoContext))]
-    [Migration("20210218221630_CitiesAddPointsOfInterestMigration")]
-    partial class CitiesAddPointsOfInterestMigration
+    [Migration("20210219214449_CitiesInitMigration")]
+    partial class CitiesInitMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,7 +31,7 @@ namespace Cities.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(20);
+                        .HasMaxLength(30);
 
                     b.HasKey("Id");
 
@@ -57,7 +57,7 @@ namespace Cities.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(20);
+                        .HasMaxLength(30);
 
                     b.HasKey("Id");
 

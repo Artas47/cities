@@ -13,7 +13,7 @@ namespace Cities.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(maxLength: 20, nullable: false),
+                    Name = table.Column<string>(maxLength: 30, nullable: false),
                     Description = table.Column<string>(maxLength: 150, nullable: true)
                 },
                 constraints: table =>
@@ -27,7 +27,7 @@ namespace Cities.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(maxLength: 20, nullable: false),
+                    Name = table.Column<string>(maxLength: 30, nullable: false),
                     Description = table.Column<string>(maxLength: 150, nullable: true),
                     CityId = table.Column<int>(nullable: false)
                 },
@@ -56,6 +56,19 @@ namespace Cities.Migrations
                 table: "Cities",
                 columns: new[] { "Id", "Description", "Name" },
                 values: new object[] { 3, "The one with that big tower.", "Paris" });
+
+            migrationBuilder.InsertData(
+                table: "PointsOfInterest",
+                columns: new[] { "Id", "CityId", "Description", "Name" },
+                values: new object[,]
+                {
+                    { 1, 1, "The most visited urban park in the United States.", "Central Park" },
+                    { 2, 1, "A 102-story skyscraper located in Midtown Manhattan.", "Empire State Building" },
+                    { 3, 2, "A Gothic style cathedral, conceived by architects Jan and Pieter Appelmans.", "Cathedral" },
+                    { 4, 2, "The the finest example of railway architecture in Belgium.", "Antwerp Central Station" },
+                    { 5, 3, "A wrought iron lattice tower on the Champ de Mars, named after engineer Gustave Eiffel.", "Eiffel Tower" },
+                    { 6, 3, "The world's largest museum.", "The Louvre" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_PointsOfInterest_CityId",
