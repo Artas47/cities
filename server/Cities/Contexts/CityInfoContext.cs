@@ -26,19 +26,22 @@ namespace Cities.Contexts
                 {
                     Id = 1,
                     Name = "New York City",
-                    Description = "The one with that big park."
+                    Description = "The one with that big park.",
+                    Photo = "https://cdn.shopify.com/s/files/1/0053/6513/7472/products/chryslerbuildingrooftop.jpg?v=1544029382"
                 },
                 new City()
                 {
                     Id = 2,
-                    Name = "Antwerp",
-                    Description = "The one with the cathedral that was never really finished."
+                    Name = "Tokyo",
+                    Description = "The one with 14 milion people.",
+                    Photo = "https://i.pinimg.com/originals/ef/4b/e4/ef4be4f6e780b0f801a054707d379cd3.jpg"
                 },
                 new City()
                 {
                     Id = 3,
                     Name = "Paris",
-                    Description = "The one with that big tower."
+                    Description = "The one with that big tower.",
+                    Photo = "https://i.pinimg.com/474x/10/a9/4e/10a94e95321f95b99fa80ada2b69625b.jpg"
                 });
 
 

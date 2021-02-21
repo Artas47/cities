@@ -1,0 +1,19 @@
+.city-card {
+    display: block;
+    width: 290px;
+    height: 400px;
+    margin: 20px;
+    border: 2px solid #b3b3b3;
+    cursor: pointer;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    /* filter: brightness(1); */
+}
+
+.city-card:hover .img {
+    filter: brightness(1);
+}
+
+.img {
+    filter: brightness(50%);
+    transition: all .3s ease-out;
+}

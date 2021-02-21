@@ -16,3 +16,21 @@ C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.genrunt
 C:\Users\ARTAS\source\repos\Cities\Cities\bin\Debug\netcoreapp2.1\Cities.pdb
 C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.dll
 C:\Users\ARTAS\source\repos\Cities\Cities\obj\Debug\netcoreapp2.1\Cities.pdb
+D:\ASP .net\Cities\server\Cities\bin\Debug\netcoreapp2.1\nlog.config
+D:\ASP .net\Cities\server\Cities\bin\Debug\netcoreapp2.1\appsettings.json
+D:\ASP .net\Cities\server\Cities\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+D:\ASP .net\Cities\server\Cities\bin\Debug\netcoreapp2.1\Cities.deps.json
+D:\ASP .net\Cities\server\Cities\bin\Debug\netcoreapp2.1\Cities.runtimeconfig.json
+D:\ASP .net\Cities\server\Cities\bin\Debug\netcoreapp2.1\Cities.runtimeconfig.dev.json
+D:\ASP .net\Cities\server\Cities\bin\Debug\netcoreapp2.1\Cities.dll
+D:\ASP .net\Cities\server\Cities\bin\Debug\netcoreapp2.1\Cities.pdb
+D:\ASP .net\Cities\server\Cities\obj\Debug\netcoreapp2.1\Cities.csprojAssemblyReference.cache
+D:\ASP .net\Cities\server\Cities\obj\Debug\netcoreapp2.1\Cities.AssemblyInfoInputs.cache
+D:\ASP .net\Cities\server\Cities\obj\Debug\netcoreapp2.1\Cities.AssemblyInfo.cs
+D:\ASP .net\Cities\server\Cities\obj\Debug\netcoreapp2.1\Cities.csproj.CoreCompileInputs.cache
+D:\ASP .net\Cities\server\Cities\obj\Debug\netcoreapp2.1\Cities.RazorAssemblyInfo.cache
+D:\ASP .net\Cities\server\Cities\obj\Debug\netcoreapp2.1\Cities.RazorAssemblyInfo.cs
+D:\ASP .net\Cities\server\Cities\obj\Debug\netcoreapp2.1\Cities.RazorTargetAssemblyInfo.cache
+D:\ASP .net\Cities\server\Cities\obj\Debug\netcoreapp2.1\Cities.dll
+D:\ASP .net\Cities\server\Cities\obj\Debug\netcoreapp2.1\Cities.pdb
+D:\ASP .net\Cities\server\Cities\obj\Debug\netcoreapp2.1\Cities.genruntimeconfig.cache

@@ -17,6 +17,7 @@ namespace Cities.Entities
         public string Name { get; set; }
         [MaxLength(150)]
         public string Description { get; set; }
+        public string Photo { get; set; }
 
         public ICollection<PointOfInterest> PointsOfInterest { get; set; }
                = new List<PointOfInterest>();
