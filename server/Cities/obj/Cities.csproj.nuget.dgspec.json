@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ARTAS\\source\\repos\\Cities\\Cities\\Cities.csproj": {}
+    "D:\\ASP .net\\Cities\\server\\Cities\\Cities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ARTAS\\source\\repos\\Cities\\Cities\\Cities.csproj": {
+    "D:\\ASP .net\\Cities\\server\\Cities\\Cities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ARTAS\\source\\repos\\Cities\\Cities\\Cities.csproj",
+        "projectUniqueName": "D:\\ASP .net\\Cities\\server\\Cities\\Cities.csproj",
         "projectName": "Cities",
-        "projectPath": "C:\\Users\\ARTAS\\source\\repos\\Cities\\Cities\\Cities.csproj",
+        "projectPath": "D:\\ASP .net\\Cities\\server\\Cities\\Cities.csproj",
         "packagesPath": "C:\\Users\\ARTAS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ARTAS\\source\\repos\\Cities\\Cities\\obj\\",
+        "outputPath": "D:\\ASP .net\\Cities\\server\\Cities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ARTAS\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h4sBpLTb5eqRd6m7QEUYk11Z2ltmWO7IkZT1P24Ph8UUw28jl4lZhUHANzJqBLcF8YRQcjvgZg5ESlad9gJZqw==",
+  "dgSpecHash": "H9mRqd9T0m4Xn07i25oSeTZfOCBbEy1YpUG7/MHWsfGMS3XkfOONpkTRky0ScfMZpmpq6UhcMvZH9wkKomQRJQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ARTAS\\source\\repos\\Cities\\Cities\\Cities.csproj",
+  "projectFilePath": "D:\\ASP .net\\Cities\\server\\Cities\\Cities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ARTAS\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\ARTAS\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
