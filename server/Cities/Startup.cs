@@ -19,6 +19,8 @@ namespace Cities
     public class Startup
     {
         private readonly IConfiguration _configuration;
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 
         public Startup(IConfiguration configuration)
         {
@@ -28,6 +30,15 @@ namespace Cities
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
+                                  });
+            });
+
             services.AddMvc()
                  .AddMvcOptions(o =>
                  {
@@ -56,6 +67,8 @@ namespace Cities
             {
                 app.UseExceptionHandler();
             }
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseStatusCodePages();
 
