@@ -5,10 +5,10 @@ import CloseIcon from '@material-ui/icons/Close';
 import "./CityCard.css";
 import { IconButton } from '@material-ui/core';
 
-const CityCard = ({photo, id, name, newPoint, city, pointOfInterestId, cityId, onDeleteHandler}) => {
+const CityCard = ({photo, id, name, newPoint, city, pointOfInterestId, cityId, onDeleteHandler, onNewPoiAdd, setOpen}) => {
     const params = useParams();
     if(newPoint){
-        return <div style={{display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.8)'}} className='city-card'>
+        return <div onClick={onNewPoiAdd} style={{display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.8)'}} className='city-card'>
             <p>
                 Add point of <br /> interest
             </p>
