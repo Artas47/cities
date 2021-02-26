@@ -3485,3 +3485,48 @@ SELECT @@ROWCOUNT;
 2021-02-25 20:59:57.5718|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
 2021-02-25 20:59:57.5718|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action Cities.Controllers.PointsOfInterestController.DeletePointOfInterest (Cities) in 25.4694ms
 2021-02-25 20:59:57.5718|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 35.9499ms 204 
+2021-02-25 21:06:06.9588|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:61365/api/cities/3/pointsofinterest/8  
+2021-02-25 21:06:06.9588|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|Policy execution successful.
+2021-02-25 21:06:06.9708|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "GetPointOfInterest", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetPointOfInterest(Int32, Int32) on controller Cities.Controllers.PointsOfInterestController (Cities).
+2021-02-25 21:06:06.9708|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method Cities.Controllers.PointsOfInterestController.GetPointOfInterest (Cities) - Validation state: Valid
+2021-02-25 21:06:06.9815|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-02-25 21:06:07.0559|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__cityId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2021-02-25 21:06:07.0559|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__cityId_0='?' (DbType = Int32), @__pointOfInterestId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name], [p].[Photo]
+FROM [PointsOfInterest] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfInterestId_1)
+2021-02-25 21:06:07.0559|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method Cities.Controllers.PointsOfInterestController.GetPointOfInterest (Cities), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 87.7794ms.
+2021-02-25 21:06:07.0559|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'Cities.Models.PointOfInterestDto'.
+2021-02-25 21:06:07.0559|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action Cities.Controllers.PointsOfInterestController.GetPointOfInterest (Cities) in 97.2625ms
+2021-02-25 21:06:07.0719|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 113.2014ms 200 application/json; charset=utf-8
+2021-02-25 21:06:08.4063|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:61365/api/cities/3?includepointsofinterest=true  
+2021-02-25 21:06:08.4063|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|Policy execution successful.
+2021-02-25 21:06:08.4063|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "GetCity", controller = "Cities"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCity(Int32, Boolean) on controller Cities.Controllers.CitiesController (Cities).
+2021-02-25 21:06:08.4063|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method Cities.Controllers.CitiesController.GetCity (Cities) - Validation state: Valid
+2021-02-25 21:06:08.4063|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-02-25 21:06:08.4063|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name], [c].[Photo]
+FROM [Cities] AS [c]
+WHERE [c].[Id] = @__cityId_0
+ORDER BY [c].[Id]
+2021-02-25 21:06:08.4173|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__cityId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [c.PointsOfInterest].[Id], [c.PointsOfInterest].[CityId], [c.PointsOfInterest].[Description], [c.PointsOfInterest].[Name], [c.PointsOfInterest].[Photo]
+FROM [PointsOfInterest] AS [c.PointsOfInterest]
+INNER JOIN (
+    SELECT TOP(1) [c0].[Id]
+    FROM [Cities] AS [c0]
+    WHERE [c0].[Id] = @__cityId_0
+    ORDER BY [c0].[Id]
+) AS [t] ON [c.PointsOfInterest].[CityId] = [t].[Id]
+ORDER BY [t].[Id]
+2021-02-25 21:06:08.4173|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method Cities.Controllers.CitiesController.GetCity (Cities), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 13.8921ms.
+2021-02-25 21:06:08.4173|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'Cities.Models.CityDto'.
+2021-02-25 21:06:08.4173|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action Cities.Controllers.CitiesController.GetCity (Cities) in 16.6121ms
+2021-02-25 21:06:08.4173|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 19.9129ms 200 application/json; charset=utf-8
