@@ -11,10 +11,15 @@ const PointsOfInterest = () => {
     const [isLoading, setIsLoading] = useState();
     const [data, setData] = useState();
     const [open, setOpen] = useState(false);
-    const [name, setName] = useState('');
-    const [desc, setDesc] = useState('');
+    const [isEditing, setIsEditing] = useState(false);
+    const [poiId, setPoiId] = useState(null);
+    const [poiName, setPoiName] = useState('');
+    const [initialData, setInitialData] = useState({
+        name: '',
+        description: '',
+        photo: ''
+    });
 
-    console.log('gfdsgsfd', data);
     useEffect(() => {
         const fetchData = async () => { 
             setIsLoading(true);
@@ -44,8 +49,6 @@ const PointsOfInterest = () => {
         return <div className="loader"></div>
     }
 
-    console.log(isLoading)
-
     const handleClose = () => {
         setOpen(false);
     }
@@ -58,12 +61,12 @@ const PointsOfInterest = () => {
         aria-describedby="alert-dialog-description"
       >
         <DialogContent style={{width: '500px', backgroundColor: 'rgba(0,0,0,0.2)'}}>
-        <p style={{textAlign: 'center', fontSize: '24px', fontWeight: 500}}>New point of interest</p>
+        <p style={{textAlign: 'center', fontSize: '24px', fontWeight: 500}}>{isEditing ? `Update "${poiName}" point of interest` : 'New point of interest'}</p>
         <div style={{display: 'flex', flexDirection: 'column', width: '80%', margin: '0 auto'}}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} label="Name" id="standard-size-small" variant="filled" style={{marginBottom: '40px'}} />
-            <TextField value={desc} onChange={(e) => setDesc(e.target.value)} label="Description" id="standard-size-normal" variant="filled" style={{marginBottom: '40px'}}/>
+            <TextField value={initialData.name} onChange={(e) => {setInitialData({...initialData, name: e.target.value})}} label="Name" id="standard-size-small" variant="filled" style={{marginBottom: '40px'}} />
+            <TextField value={initialData.description} onChange={(e) => setInitialData({...initialData, description: e.target.value})} label="Description" id="standard-size-normal" variant="filled" style={{marginBottom: '40px'}}/>
         </div>
-        <PictureUpload name={name} desc={desc} onClose={handleClose} />
+        <PictureUpload poiId={poiId} setIsEditing={setIsEditing} isEditing={isEditing} photo={initialData.photo} setInitialData={setInitialData} name={initialData.name} desc={initialData.description} cityData={data} setData={setData} onClose={handleClose} />
         </DialogContent>
       </Dialog>
     <Fade in={true}>
@@ -75,9 +78,9 @@ const PointsOfInterest = () => {
             </span>
             </h1>
             <div style={{display: 'flex', position: 'relative', flexWrap: 'wrap', justifyContent: 'center', position: 'relative'}}>
-            <CityCard setOpen={setOpen} onNewPoiAdd={() => setOpen(true)} newPoint/>
+            <CityCard  setOpen={setOpen} onNewPoiAdd={() => setOpen(true)} newPoint/>
             {data && data.map(poi => {
-                return <CityCard id={poi.id} name={poi.name} photo={poi.photo} cityId={params.cityId} onDeleteHandler={onDeleteHandler} />
+                return <CityCard setPoiId={setPoiId} setPoiName={setPoiName} setInitialData={setInitialData} id={poi.id} poi={poi} setOpen={setOpen} name={poi.name} photo={poi.photo} cityId={params.cityId} onDeleteHandler={onDeleteHandler} />
             })}
             </div>
         </div>

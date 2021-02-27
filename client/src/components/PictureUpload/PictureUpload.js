@@ -4,6 +4,7 @@ import {useDropzone} from 'react-dropzone';
 import { Box, Button, Typography } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { useParams } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
     imagePreview: {
@@ -22,16 +23,29 @@ const useStyles = makeStyles(() => ({
 }));
 
 const PictureUpload = (props) => {
-    const { open, onClose, name, desc } = props;
+    const { open, onClose, name, desc, setData, cityData, photo, setInitialData, setIsEditing, isEditing, poiId } = props;
     const [originalImgSrc, setOriginalImgSrc] = useState('');
-
+    console.log(poiId);
     const [activeStep, setActiveStep] = React.useState(0);
     const [error, setError] = useState(null);
-
+    const params = useParams();
+    console.log(isEditing)
     const classes = useStyles();
+    console.log(cityData);
 
     useEffect(() => {
-        return () => resetImage();
+        if(photo){
+            setIsEditing(true);
+            setOriginalImgSrc(photo);
+        }
+    }, [photo])
+
+    useEffect(() => {
+        return () => {
+            setInitialData({name: '', description: '', photo: ''});
+            resetImage();
+            setIsEditing(false);
+        };
     }, [open]);
 
     const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
@@ -73,16 +87,39 @@ const PictureUpload = (props) => {
             setError('Some data is missing. Name, description and image are required.');
         }
         if(!error){
-            fetch("http://localhost:61365/api/cities/3/pointsofinterest",
-            {
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                method: "POST",
-                body: JSON.stringify(data)
-            })
-            .then(function(res){ return res.json(); })
-            .then(function(data){ console.log('zz',data) })
+            if(!isEditing){
+                fetch(`http://localhost:61365/api/cities/${params.cityId}/pointsofinterest`,
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    method: "POST",
+                    body: JSON.stringify(data)
+                })
+                .then(function(res){ return res.json(); })
+                .then(function(data){ 
+                    onClose() 
+                    setData([...cityData, data])
+                })
+            } else {
+                fetch(`http://localhost:61365/api/cities/${params.cityId}/pointsofinterest/${poiId}`,
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    method: "PUT",
+                    body: JSON.stringify(data)
+                })
+                .then(function(res){ 
+                    onClose();
+                    setData(cityData.map(poi => {
+                        if(poiId === poi.id){
+                            return {...poi, name: data.name, description: data.description, photo: data.photo};
+                        }
+                        return poi
+                    }))
+                })
+            }
         }
     };
 
@@ -118,7 +155,7 @@ const PictureUpload = (props) => {
                     </Button>
                     <div>
                         <Button style={{marginLeft: '20px'}} variant="contained" color="primary" onClick={onImageSave}>
-                            Add
+                            {isEditing ? 'Update' : 'Add'}
                         </Button>
                     </div>
                 </div>

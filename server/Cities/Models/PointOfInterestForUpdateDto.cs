@@ -13,5 +13,6 @@ namespace Cities.Models
         public string Name { get; set; }
         [MaxLength(150)]
         public string Description { get; set; }
+        public string Photo { get; set; }
     }
 }
